@@ -40,8 +40,11 @@ docker run -e INDEX_NAME="fire" -e DATASET_ID="8m42-w767" -e APP_TOKEN="your_tok
 ## Questions that I want to answer by exploring this dataset
 
 1. Compare average response time in boroughs. (I wanted to do it with all zipcodes compared to mine, but I forgot to include zipcode as a variable while uploading the data.)
+![alt text](https://github.com/sdf-jkl/NYC-fire-data-exploration/edit/main/assets/image.jpg?raw=true)
 2. Compare amount of engines assigned to different incident type. (What incident type has biggest amount of engines assigned?)
+
 3. See which incidents in each borough make up total amount of incidents. (I really want to use heatmap for something.)
+
 4. Compare average amount of engines per day in boroughs. (I can't come up with interesting questions)
 
 
