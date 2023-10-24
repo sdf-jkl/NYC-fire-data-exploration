@@ -11,7 +11,8 @@ Change directory to that folder and build docker image.
 ```
 docker build -t bigdataproject1:1.0 . #bigdataproject1 can be anything you want
 ```
-Then you need to run the image with your parameters
+Then you need to run the image with your parameters in session manager.
+
 -e INDEX_NAME= index name you'll see in opensearch. Name it whatever you want, I named my "fire"
 
 -e DATASET_ID= id of the dataset you want to use. I used "8m42-w767"
@@ -35,6 +36,7 @@ docker run -e INDEX_NAME="fire" -e DATASET_ID="8m42-w767" -e APP_TOKEN="your_tok
 ```
 
 ## Questions that I want to answer by exploring this dataset
+
 1. Compare average response time in all observations vs average response time for my zipcode. (I want to know how long it will take for FDNY to save me.)
 2. See what is the most common type of incident in different boroughs. (Do people have different incidents more often in different boroughs?)
 3. Compare average amount of engines assigned to different incident type. (What incident type has biggest amount of engines assigned on average.)
