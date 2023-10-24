@@ -13,13 +13,21 @@ docker build -t bigdataproject1:1.0 . #bigdataproject1 can be anything you want
 ```
 Then you need to run the image with your parameters
 -e INDEX_NAME= index name you'll see in opensearch. Name it whatever you want, I named my "fire"
+
 -e DATASET_ID= id of the dataset you want to use. I used "8m42-w767"
+
 -e APP_TOKEN= your NYC Data API key 
+
 -e ES_HOST= your opensearch endpoint link. I used "https://search-meoooooow-hua5yemsoampwdzur55v25yl64.us-east-2.es.amazonaws.com" 
+
 -e ES_USERNAME= your opensearch master username - "your_username" I wont share mine
+
 -e ES_PASSWORD= your opensearch master password - "your_password" It's a secret
+
 --page_size= amount of rows you want to extract(don't make it too big, cause it crashed my EC2 instance when I used 60k last time, to run it final time for my project I used 6000.)
+
 --numm_pages= optional parameter for extracting more data than page_size can handle at once. I used 1000, making it total 6mil rows.
+
 
 It should look like this:
 ```
