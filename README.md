@@ -43,3 +43,68 @@ docker run -e INDEX_NAME="fire" -e DATASET_ID="8m42-w767" -e APP_TOKEN="your_tok
 2. Compare amount of engines assigned to different incident type. (What incident type has biggest amount of engines assigned?)
 3. See which incidents in each borough make up total amount of incidents. (I really want to use heatmap for something.)
 4. Compare average amount of engines per day in boroughs. (I can't come up with interesting questions)
+
+
+## I also had problem with
+
+index types of my variables so I had to reindex them. Like numerical variables were keywords.
+
+I just created a new index with changed mappings and reindexed it into a new index. 
+
+I was afraid I might ruin the first one, so I decided to keep going with the new index for vizualizations.
+```
+GET fire
+
+GET newfire/_search
+
+POST  _reindex?slices=5
+{
+  "max_docs": 6000000,
+  "source": {
+    "index": "fire",
+    "size": 1000,
+    "query": {
+      "match_all": {}
+    }
+  },
+  "dest": {
+    "index": "newfire"
+  }
+}
+
+
+
+PUT newfire
+{
+  "settings": {
+    "number_of_shards": 1,
+    "number_of_replicas": 1
+  }, 
+  "mappings": {
+    "properties": {
+      "dispatch_response_seconds_qy": {
+        "type": "integer"
+      },
+      "engines_assigned_quantity": {
+        "type": "integer"
+      },
+      "incident_borough": {
+        "type": "keyword"
+      },
+      "incident_classification": {
+        "type": "keyword"
+      },
+      "incident_datetime": {
+        "type": "date"
+      },
+      "incident_response_seconds_qy": {
+        "type": "integer"
+      },
+      "starfire_incident_id": {
+        "type": "keyword"
+      }
+    }
+  }
+}
+```
+That's kinda all that I did.
