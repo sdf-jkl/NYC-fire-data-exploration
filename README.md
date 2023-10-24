@@ -8,6 +8,8 @@ That's kinda it
 ## How to use
 After running launching EC2 and opensearch instances, you should paste the folder into your EC2.
 Change directory to that folder and build docker image.
+
+You should know which variables you want to use and create mapping for them in main.py file
 ```
 docker build -t bigdataproject1:1.0 . #bigdataproject1 can be anything you want
 ```
