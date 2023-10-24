@@ -37,7 +37,7 @@ docker run -e INDEX_NAME="fire" -e DATASET_ID="8m42-w767" -e APP_TOKEN="your_tok
 
 ## Questions that I want to answer by exploring this dataset
 
-1. Compare average response time in all observations vs average response time for my zipcode. (I want to know how long it will take for FDNY to save me.)
+1. Compare average response time in boroughs. (I want to know how long it will take for FDNY to save me.)
 2. See what is the most common type of incident in different boroughs. (Do people have different incidents more often in different boroughs?)
 3. Compare average amount of engines assigned to different incident type. (What incident type has biggest amount of engines assigned on average.)
 4. See which incidents in each borough make up total amount of incidents. (I really want to use heatmap for something.)
